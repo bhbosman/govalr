@@ -38,7 +38,7 @@ func CompressedListener(maxConnections int, url string) fx.Option {
 				Target: netListener.NewNetListenApp(
 					CompressedListenerConnection,
 					url,
-					impl.TransportFactoryCompressedName,
+					impl.CreateCompressedStack,
 					CompressedListenerConnection,
 					netListener.MaxConnectionsSetting(maxConnections)),
 			}),

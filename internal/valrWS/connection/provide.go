@@ -44,7 +44,7 @@ func ProvideValrWsDialer(
 				Target: netDial.NewNetDialApp(
 					"valr",
 					"wss://api.valr.com:443/ws/trade",
-					impl.WebSocketName,
+					impl.CreateWebSocketStack,
 					ValrDialerConst,
 					netDial.MaxConnectionsSetting(1),
 					netDial.CanDial(canDials...)),

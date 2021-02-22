@@ -46,7 +46,7 @@ func TextListener(maxConnections int, url string) fx.Option {
 				Target: netListener.NewNetListenApp(
 					TextListenerConnection,
 					url,
-					impl.TransportFactoryEmptyName,
+					impl.CreateEmptyStack,
 					TextListenerConnection,
 					netListener.MaxConnectionsSetting(maxConnections)),
 			}),

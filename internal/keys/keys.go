@@ -21,7 +21,7 @@ func ProvideValrConnectionSettings() fx.Option {
 			data := &ValrConnectionSettings{}
 			current, err := user.Current()
 			if err != nil {
-				return nil,  err
+				return nil, err
 			}
 			f, err := os.Open(fmt.Sprintf(path.Join(current.HomeDir, ".valr", "keys.json")))
 			if err != nil {
